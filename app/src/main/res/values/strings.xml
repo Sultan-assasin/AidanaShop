@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">AidanaShop</string>
+    <string name="image">Image</string>
+    <string name="burgerbtn">burgerBtn</string>
+    <string name="choose_the">Choose the</string>
+    <string name="food_you_love">Food you love</string>
+    <string name="categories">Categories</string>
+    <string name="burgers">Burgers</string>
+</resources>

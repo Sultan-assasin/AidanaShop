@@ -96,6 +96,7 @@ object ShopListRepositoryImpl: ShopListRepository {
             addShopItem(ShopItem("Pizza", 0,R.drawable.img,"Pizza", 2))
             addShopItem(ShopItem("Chicken", 0,R.drawable.img,"Chicken", 3))
             addShopItem(ShopItem("Drinks", 0,R.drawable.img,"Drinks", 4))
+            addShopItem(ShopItem("Sushi", 0,R.drawable.img,"Sushi", 5))
         }
     override fun addShopItem(shopItem: ShopItem) {
         if(shopItem.id == ShopItem.UNDEFINED_ID){

@@ -2,34 +2,35 @@ package com.sultan.aidanashop.presentation.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.smarteist.autoimageslider.SliderViewAdapter
+import com.sultan.aidanashop.databinding.SlideritemBinding
 
-import androidx.viewpager2.widget.ViewPager2
-import com.sultan.aidanashop.databinding.SlideItemContainerBinding
-import com.sultan.aidanashop.domain.ShopItem
+class SliderAdapter(image: ArrayList<String>) : SliderViewAdapter<SliderAdapter.Holder>() {
 
-class SliderAdapter(private var list: List<ShopItem>, private var pager: ViewPager2) :
-   RecyclerView.Adapter<SliderAdapter.SliderViewHolder>() {
+    class Holder(val binding: SlideritemBinding) :
+        SliderViewAdapter.ViewHolder(binding.root)
+
+    private var images : ArrayList<String> = image
 
 
-    class SliderViewHolder(val binding: SlideItemContainerBinding) :
-        RecyclerView.ViewHolder(binding.root) {
 
+    override fun getCount(): Int {
+        return images.size
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SliderViewHolder {
-        val binding =
-            SlideItemContainerBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return SliderViewHolder(binding)
+    override fun onCreateViewHolder(parent: ViewGroup): Holder {
+        val binding = SlideritemBinding.inflate(
+            LayoutInflater.from(
+                parent.context
+            ), parent, false
+        )
+        return Holder(binding)
     }
 
-    override fun onBindViewHolder(holder: SliderViewHolder, position: Int) {
-
-        holder.binding.imageSlide.setImageResource(list[position].image)
-
-    }
-
-    override fun getItemCount(): Int {
-        return list.size
+    override fun onBindViewHolder(viewHolder: Holder, position: Int) {
+        Glide.with(viewHolder.binding.image)
+            .load(images.get(position)).fitCenter()
+            .into(viewHolder.binding.image)
     }
 }

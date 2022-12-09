@@ -6,9 +6,8 @@ import androidx.recyclerview.widget.ListAdapter
 import com.sultan.aidanashop.databinding.CategoryViewBinding
 import com.sultan.aidanashop.domain.ShopItem
 
-class ShopItemAdapter() :
+class ShopItemAdapter :
     ListAdapter<ShopItem, ShopItemViewHolder>(ShopItemCallBack()) {
-
 
 
     var onShopItemClickListener: ((ShopItem) -> Unit)? = null
@@ -26,10 +25,11 @@ class ShopItemAdapter() :
 //                Glide.with(context)
 //                    .load(shopItem.image)
 //                    .into(imageView) // set Image Drawable
-                imageView.setImageResource(shopItem.image)
-                root.setOnClickListener {
-                    onShopItemClickListener?.invoke(shopItem)
-                }
+            imageView.setImageResource(shopItem.image)
+            textView.text = shopItem.name
+            root.setOnClickListener {
+                onShopItemClickListener?.invoke(shopItem)
             }
         }
     }
+}

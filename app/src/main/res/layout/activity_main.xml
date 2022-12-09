@@ -76,41 +76,45 @@
                 <androidx.appcompat.widget.SearchView
                     android:id="@+id/searchBar"
                     android:layout_width="0dp"
-                    android:iconifiedByDefault="false"
-                    app:searchIcon="@null"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="20dp"
                     android:layout_marginVertical="20dp"
                     android:background="@drawable/search_back"
-                    app:iconifiedByDefault="false"
+                    android:iconifiedByDefault="false"
                     android:theme="@style/AppSearchView"
+                    app:iconifiedByDefault="false"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/text2"
-                    app:queryHint="Search for a food item" />
+                    app:queryHint="Search for a food item"
+                    app:searchIcon="@null" />
 
                 <TextView
                     android:id="@+id/text3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginVertical="45dp"
+                    android:layout_marginStart="20dp"
                     android:text="@string/categories"
                     android:textColor="@color/black"
                     android:textSize="17sp"
                     android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="@id/searchBar"
+                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/searchBar" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rvShop"
                     android:layout_width="match_parent"
                     android:layout_height="82dp"
-                    android:layout_marginStart="20dp"
                     android:layout_marginVertical="20dp"
+                    android:layout_marginStart="10dp"
+                    android:overScrollMode="never"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/text3"
+                    app:layout_constraintVertical_bias="0.0"
                     tools:listitem="@layout/category_view" />
 
                 <TextView
@@ -118,15 +122,38 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginVertical="45dp"
-                    android:text="Burgers"
+                    android:layout_marginStart="20dp"
+                    android:text="@string/burgers"
                     android:textColor="@color/black"
                     android:textSize="17sp"
                     android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="@+id/rvShop"
+                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/rvShop" />
 
-
-
+                <com.smarteist.autoimageslider.SliderView
+                    android:id="@+id/sliderView"
+                    android:layout_width="match_parent"
+                    android:layout_height="230dp"
+                    android:layout_marginVertical="20dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/text4"
+                    app:sliderAnimationDuration="600"
+                    app:sliderAutoCycleDirection="back_and_forth"
+                    app:sliderAutoCycleEnabled="true"
+                    app:sliderIndicatorAnimationDuration="600"
+                    app:sliderIndicatorGravity="center_horizontal|bottom"
+                    app:sliderIndicatorMargin="30dp"
+                    app:sliderIndicatorOrientation="horizontal"
+                    app:sliderIndicatorPadding="3dp"
+                    app:sliderIndicatorRadius="2dp"
+                    app:sliderIndicatorSelectedColor="#ff0036"
+                    app:sliderIndicatorUnselectedColor="#dedee4"
+                    app:sliderScrollTimeInSec="3"
+                    app:sliderStartAutoCycle="true" />
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>

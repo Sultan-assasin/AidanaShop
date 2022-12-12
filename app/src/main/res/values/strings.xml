@@ -6,5 +6,6 @@
     <string name="food_you_love">Food you love</string>
     <string name="categories">Categories</string>
     <string name="burgers">Burgers</string>
-    <string name="burgers">Burgers</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
 </resources>
